@@ -26,12 +26,14 @@ class Config:
     DEEPSEEK_BASE_URL: str = "https://api.deepseek.com"
 
     # Gemini
+    # 默认使用 Pro 系列以获得最佳校对深度；如需加速可在 .env 中改为 gemini-2.0-flash
     GEMINI_API_KEY: str = os.environ.get("GEMINI_API_KEY", "")
-    GEMINI_MODEL: str   = os.environ.get("GEMINI_MODEL", "gemini-2.0-flash")
+    GEMINI_MODEL: str   = os.environ.get("GEMINI_MODEL", "gemini-2.5-pro-preview-03-25")
 
     # Claude
+    # 默认使用 Opus 以获得最佳推理能力；如需降低成本可在 .env 中改为 claude-sonnet-4-6
     CLAUDE_API_KEY: str = os.environ.get("ANTHROPIC_API_KEY", "")
-    CLAUDE_MODEL: str   = os.environ.get("CLAUDE_MODEL", "claude-sonnet-4-6")
+    CLAUDE_MODEL: str   = os.environ.get("CLAUDE_MODEL", "claude-opus-4-6")
 
     # 文档截断长度（字符数），控制发给 AI 的内容量
     DEEPSEEK_MAX_CHARS: int = 40_000
